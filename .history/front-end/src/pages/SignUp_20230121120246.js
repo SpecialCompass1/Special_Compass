@@ -5,7 +5,7 @@ export const SignUp = () => {
    
     return(
         <div className='content-container'>
-              <h1> Register As: </h1>
+              <h1> Sign UP As: </h1>
             <hr />
                <a href="/studentsignup"><button className="Button">Student
                 </button></a> 
