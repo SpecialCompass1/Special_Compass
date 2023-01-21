@@ -19,7 +19,10 @@ import "./Navbar.css";
            
           <nav ref={navRef}>
           
-           
+      
+           <a href="/">Sign Up</a>
+
+            <a href="/login">Log In</a>
 
             <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                 <FaTimes></FaTimes>
