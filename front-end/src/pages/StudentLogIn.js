@@ -13,7 +13,7 @@ const [passwordValue, setPasswordValue] = useState('');
 
 const history = useHistory();
 const onLogInClicked = async () => {
-    axios.post('/studentsignup' , {
+    axios.post('/studentlogin' , {
         email: emailValue,
         password: passwordValue,
         
@@ -22,6 +22,7 @@ const onLogInClicked = async () => {
     }).then((res)=>{
         history.push("/studentdash");
     }).catch((err)=>{
+        console.log(err);
         alert("email already exists!")
     })
  

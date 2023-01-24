@@ -17,7 +17,7 @@ export const StudentsignUpRoute = {
         const {email,password,role,studentID,fullName,collegeName} = req.body;
 
         if(password.length<8){
-            res.status(400).send({
+            return res.status(400).send({
                 errorMessage:"Passwword length should bee greater or wyak ad "
             })
         }
@@ -25,7 +25,7 @@ export const StudentsignUpRoute = {
         const student_ = await Student.findOne({email});
 
         if(student_) {
-            res.status(400).send({
+            return res.status(400).send({
                 errorMessage:"Email Already Exist!"
             })
         }
@@ -43,6 +43,8 @@ export const StudentsignUpRoute = {
             });
         
         const { insertedId } = result;
+        console.log("insertedId");
+        console.log(insertedId);
        
         jwt.sign({
             id: insertedId,
@@ -56,9 +58,10 @@ export const StudentsignUpRoute = {
         },
         (err,  token) => {
             if (err) {
+                console.log(err);
                 return res.status(500).send(err);
             }
-            res.status(200).json({student_:result,accessToken:token});
+            return res.status(200).json({student_:result,accessToken:token});
         } );
 
     } 
