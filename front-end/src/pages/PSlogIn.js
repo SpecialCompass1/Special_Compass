@@ -1,7 +1,7 @@
 
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-
+import axios from '../axios/axios';
 
 
 
@@ -13,7 +13,18 @@ const [passwordValue, setPasswordValue] = useState('');
 
 const history = useHistory();
 const onLogInClicked = async () => {
-  alert('abcd');
+    axios.post('/pslogin' , {
+        email: emailValue,
+        password: passwordValue,
+        
+     
+        //add 
+    }).then((res)=>{
+        history.push("/login");
+    }).catch((err)=>{
+        console.log(err);
+        alert("email already exists!")
+    })
   
 }
 

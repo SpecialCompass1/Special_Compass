@@ -1,36 +1,43 @@
 import bcrypt from 'bcrypt';
-import { jwt } from 'jsonwebtoken';
+const jwt = require("jsonwebtoken")
 
 
-let HCProfessional_Login = require("../model/HCLogin");
+
+let HCregister = require('../model/healthCare')
 
 
-export const HClogInRoute = {
+
+
+export const PSlogInRoute = {
     path: '/api/hclogin',
     method: 'post',
     handler: async (req, res) => {
         const { email, password } = req.body;
-        const user = await HCProfessional_Login.findOne({email })
+        console.log("I am in the Log In controller");
+        const HCProfessional = await HCregister.findOne({email })
+        console.log("beofre");
+        if (!HCProfessional) return res.sendStatus(401);
+        console.log("I am afrrt")
 
-        if (!user) return res.sendStatus(401);
+        const { _id: id, passwordHash} = HCProfessional;
 
-        const { _id: id, passwordHash} = user;
-
-        const isCorrect = await bcrypt.compare(password, passwordHash);
+        console.log(password,passwordHash);
+        console.log(HCProfessional);
+        const isCorrect = await bcrypt.compare(password, HCProfessional.password);
 
         if (isCorrect) {
             jwt.sign({id, email, }, process.env.JWT_SECRET, { expiresIn: '2d'}, (err, token) => {
 
             if (err) {
-                res.status(500).json(err);
+               return res.status(500).json(err);
             }
 
-            res.status(200).json({ token});
+            return res.status(200).json({ token});
             
 
             });
         }else {
-            res.sendStatus(401);
+           return res.sendStatus(401);
         }
     }
 }
