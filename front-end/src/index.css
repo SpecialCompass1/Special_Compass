@@ -14,7 +14,7 @@ hr {
 }
 
 button, input {
-    border-radius: 8px;
+    border-radius: 19px;
     box-sizing: border-box;
     display: block;
     font-size: 16px;
@@ -25,29 +25,38 @@ button, input {
 
 input {
     border: 1px solid black;
+   
 }
+input:focus{
+    border:1px solid rgba(255,109,46,0.6);
+    box-shadow: 0 0 3px rgba(255,109,46,0.6);
+    outline: none;
+    font-size: 1.1em;
+  }
 
 button {
-    background-color: rgb(127, 208, 235);
-    border: 1px solid rgb(127, 176, 231);
+    background-color: rgb(137, 216, 242);
+    border: 1px solid rgb(31, 32, 34);
     cursor: pointer;
     
 }
 
 .page-container {
     display:flex;
-    background-color: rgb(255, 252, 252);
-    min-height: 100vh;
+    background-color: rgb(247, 238, 230);
+   min-height: 100vh;
     min-width: 100%;
     align-items: center;
     justify-content: center;
 }
 
 .content-container {
-    background-color: lightgrey;
+    background-color: rgb(194, 189, 189);
     border-radius: 50px;
-    width: 460px;
+    border-color: rgb(200, 66, 66);
+    width: 520px;
     padding: 32px;
+ 
 
 }
 

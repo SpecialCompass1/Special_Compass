@@ -8,11 +8,12 @@ let HCregister = require('../model/healthCare')
 
 
 
-export const PSlogInRoute = {
+export const HClogInRoute = {
     path: '/api/hclogin',
     method: 'post',
     handler: async (req, res) => {
         const { email, password } = req.body;
+
         console.log("I am in the Log In controller");
         const HCProfessional = await HCregister.findOne({email })
         console.log("beofre");
@@ -26,7 +27,7 @@ export const PSlogInRoute = {
         const isCorrect = await bcrypt.compare(password, HCProfessional.password);
 
         if (isCorrect) {
-            jwt.sign({id, email, }, process.env.JWT_SECRET, { expiresIn: '2d'}, (err, token) => {
+            jwt.sign({id, email,}, process.env.JWT_SECRET, { expiresIn: '2d'}, (err, token) => {
 
             if (err) {
                return res.status(500).json(err);

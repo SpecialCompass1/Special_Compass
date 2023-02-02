@@ -1,7 +1,7 @@
 
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-
+import axios from '../axios/axios';
 
 
 
@@ -13,8 +13,10 @@ const [passwordValue, setPasswordValue] = useState('');
 
 const history = useHistory();
 const onLogInClicked = async () => {
-  alert('abcd');
-  
+    axios.post('/hclogin' , {
+        email: emailValue,
+        password: passwordValue,
+    });
 }
 
     return (

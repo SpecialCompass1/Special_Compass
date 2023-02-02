@@ -40,6 +40,7 @@ const onSignUpClicked = async () => {
 
     return (
         <div className="content-container">
+        
             <h1> Student Sign UP</h1>
             <hr />
             {errorMessage && <div className="fail">{errorMessage}</div>}

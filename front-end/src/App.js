@@ -1,15 +1,16 @@
 import { Routes } from './Routes';
 import {Navbar} from './components/Navbar';
+import { Sidebar } from './components/Sidebar';
 
 import React from 'react';
 export const App = () => {
     return (
        <>
        <React.Fragment>
-      <Navbar />
+     <Navbar />
       </React.Fragment>
-       <br></br>
-        
+       
+        <br></br>
         
         <div className="page-container">
        

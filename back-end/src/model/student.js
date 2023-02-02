@@ -1,12 +1,14 @@
 let mongoose = require("mongoose")
 
 let studentModel = mongoose.Schema({
+    
     email: String,
     password: String,
     role:String,
     studentID: String,
     fullName: String,
-    collegeName: String
+    collegeName: String,
+    verifytoken: String
 },{
     collection:"studentRegister"
 })

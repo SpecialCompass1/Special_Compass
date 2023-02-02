@@ -1,5 +1,8 @@
 import bcrypt from 'bcrypt';
+import { Router } from 'express';
 const jwt = require("jsonwebtoken")
+
+
 
 
 
@@ -13,11 +16,11 @@ export const StudentlogInRoute = {
     method: 'post',
     handler: async (req, res) => {
         const { email, password } = req.body;
-        console.log("I am in the Log In controller");
+       
         const user = await Student.findOne({email })
-        console.log("beofre");
+       
         if (!user) return res.sendStatus(401);
-        console.log("I am afrrt")
+       
 
         const { _id: id, passwordHash} = user;
 
@@ -39,5 +42,8 @@ export const StudentlogInRoute = {
         }else {
            return res.sendStatus(401);
         }
+
     }
+    
 }
+

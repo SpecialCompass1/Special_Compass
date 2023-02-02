@@ -40,6 +40,7 @@ export const StudentsignUpRoute = {
               studentID: studentID,
               fullName:fullName,
               collegeName:collegeName
+              
             });
         
         const { insertedId } = result;
@@ -47,10 +48,11 @@ export const StudentsignUpRoute = {
         console.log(insertedId);
        
         jwt.sign({
-            id: insertedId,
+            _id: insertedId,
             email: email,
+            password:password,
             //info: startingInfo,
-            //isVerified:false,
+            isVerified:false,
         },
         process.env.JWT_SECRET,
         {

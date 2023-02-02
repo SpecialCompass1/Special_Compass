@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+  }
+  .container{
+    display: flex;
+  }
+  main{
+    width:100%;
+    padding: 20px;
+  }
+  .sidebar{
+    background: rgb(102, 189, 218);
+    color: rgb(230, 182, 182);
+    height:100vh;
+    width: 300px;
+    transition: all 0.5s;
+  }
+  .top_section{
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+  }
+  .logo{
+    font-size: 30px;
+  }
+  .bars{
+    display: flex;
+    font-size: 25px;
+    margin-left: 50px;
+  }
+  .link{
+    display: flex;
+    color: #fff;
+    padding: 10px 15px;
+    gap:15px;
+    transition: all 0.5s;
+  }
+  .link:hover{
+    background:rgb(191, 225, 237);
+    color: #000;
+    transition: all 0.5s;
+  }
+  .active{
+    background:rgb(191, 225, 237);
+    color: #000;
+  
+  }
+  .icon, .link_text{
+    font-size: 20 px;
+    padding: 0%;
+  }
+  .App-logo{
+      
+    height: 100px;
+    width: 100%;
+    padding: 0;
+    margin:0;
+  }
+  .image{
+    /* Full height */
+    height: 1200px;
+    width: 1200px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+   
+  }
+  /* Centered text */
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* Container holding the image and the text */
+  .container {
+    position: relative;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    font-size: 40px;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .button
+   {padding: 32px 16px;
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 16px;
+    position: center;
+  }
+  
+  .content-container1 {
+    background-color: lightgrey;
+    border-radius: 50px;
+    width: 460px;
+    padding: 32px;
+    text-align:"center";
+    
+  }
+  #form-btn{
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    width: 515px;
+    padding: 32px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 16px;
+    position: center;
+  }

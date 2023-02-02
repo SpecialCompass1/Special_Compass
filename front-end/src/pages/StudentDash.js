@@ -1,39 +1,29 @@
-import React, {useState} from 'react';
-import axios from 'axios';
+import React from 'react';
 
-export const StudentDashboard =() => {
+export const StudentDashboard = () => {
+   
+    return(
+        <div className='content-container'>
+              <h1>Student Dashboard </h1>
+            <hr />
+               <a href="/completeprof"><button className="Button">Complete Profile
+                </button></a> 
+                 
+               
+                <a href="/reqaccomodation"><button className="Button">Request Accomodation
+                </button></a>
 
-  const [file, setFile] = useState()
+              
+               
+                <a href="/approveacc"><button className="Button">Approve Accomodation 
+                </button></a>
+                
+                <a href="/viewdoc"><button className="Button">View Documents 
+                </button></a>
 
-  function handleChange(event) {
-    setFile(event.target.files[0])
-  }
-  
-  function handleSubmit(event) {
-    event.preventDefault()
-    const url = 'http://localhost:3000/studentdash';
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('fileName', file.name);
-    const config = {
-      headers: {
-        'content-type': 'multipart/form-data',
-      },
-    };
-    axios.post(url, formData, config).then((response) => {
-      console.log(response.data);
-    });
-
-  }
-
-  return (
-    <div className="App">
-        <form onSubmit={handleSubmit}>
-          <h1>React File Upload</h1>
-          <input type="file" onChange={handleChange}/>
-          <button type="submit">Upload</button>
-        </form>
-    </div>
-  );
+               
+                
+                
+        </div>
+    )
 }
-

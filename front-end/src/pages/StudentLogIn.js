@@ -53,7 +53,7 @@ const onLogInClicked = async () => {
             <button 
             disabled={!emailValue || !passwordValue}
             onClick={onLogInClicked}>Log In</button>
-            <button onClick={() => history.push('/forgot-password')}>Forgot your password?</button>
+            <button onClick={() => history.push('/passreset')}>Forgot your password?</button>
             <button onClick={() => history.push('/studentsignup')}>Don't have an account? Sign Up</button>
         </div>
     )

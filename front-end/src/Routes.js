@@ -7,6 +7,14 @@ import { PSLogIn } from './pages/PSlogIn';
 import { StudentSignUpPage } from './pages/StudentSignUpPage';
 import {PSsignUp} from './pages/PSsignUp'
 import {HealthCareSignUp} from './pages/HealthCareSignUp'
+import {ApproveAccommodation} from './pages/ApproveAccomodation';
+import {RequestAccommodation} from './pages/RequestAccomodation';
+import {ViewDocuments} from './pages/ViewDocuments';
+import {CompleteProfile} from './pages/CompleteProfile';
+import { ForgotPassword } from './components/ForgotPassword';
+import { PasswordReset } from './components/PasswordReset';
+import { Sidebar } from './components/Sidebar';
+
 import { PrivateRoute } from './auth/PrivateRoute';
 import "./index.css";
 import { SignUp } from './pages/SignUp';
@@ -29,6 +37,22 @@ export const Routes = () => {
                 <Route path="/studentlogin">
                     <StudentLogIn />
                 </Route>
+                <Route path="/approveacc">
+                    <ApproveAccommodation />
+                </Route>
+                <Route path="/viewdoc">
+                    <ViewDocuments />
+                </Route>
+                <Route path="/completeprof">
+                    <CompleteProfile />
+                </Route>
+                <Route path="/reqaccomodation">
+                    <RequestAccommodation />
+                </Route>
+
+                <Route path="/studentlogin">
+                    <StudentLogIn />
+                </Route>
                 <Route path="/studentdash">
                     <StudentDashboard />
                 </Route>
@@ -46,6 +70,13 @@ export const Routes = () => {
 
                 <Route path="/pslogin">
                 <PSLogIn /> </Route>
+
+                <Route path="/forgotpassword/:id/:token">
+                    <ForgotPassword />
+                </Route>
+                <Route path="/passreset">
+                    <PasswordReset />
+                </Route>
 
 
                 <Route path="/pssignup">
